@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "ChiTietTin";
+    Layout = "~/Views/Shared/_Sanpham.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-9">
+            <div class="article-content">
+                <div class="featured-image">
+
+                    <img src="~/Hinh/Anhtin/@Model.AnhTin" class="img-responsive" alt="@Url.Action("ChiTietTin","TinTuc", new { id = Model.MaTin})" title="@Model.TieuDeTin">
+
+               
+                </div>
+                <h1>@Model.TieuDeTin</h1>
+
+                <div class="rte">
+                    <p style="text-align: justify;">@Model.NoiDungTin&nbsp;</p>            
+                </div>
+                
+            </div>
+
+
+            
+
+            
+
+        </div>
+        
+
+    </div>
+</div>
+
+

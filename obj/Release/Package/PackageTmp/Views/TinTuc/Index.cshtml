@@ -1,0 +1,35 @@
+﻿<link href="~/content/style.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Sanpham.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h1 class="page-title">Tin tức</h1>  
+            <div class="wrapper-blog">  
+                @foreach (var item in Model)
+                {                        
+                <div class="article-item">
+                    <div class="row">
+                        <div class="col-    xs-6 col-sm-4">
+                            <div class="image">
+                                <a href="@Url.Action("ChiTietTin","TinTuc", new { id = item.MaTin})">
+                                    <img style="width:262.48px;height:159.91px" src="~/Hinh/Anhtin/@item.AnhTin" alt="@item.TieuDeTin" class="img-fix">
+                                </a>
+                                <p class="date">@item.NgayViet</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-8">
+                            <h3><a href="@Url.Action("ChiTietTin","TinTuc", new { id = item.MaTin})">@item.TieuDeTin</a></h3>
+                            <div class="desc hidden-xs"><p style="text-align: justify;">@item.NoiDungTinNgan</p></div>
+                            <a href="@Url.Action("ChiTietTin","TinTuc", new { id = item.MaTin})" class="color-featured hidden-xs">Xem thêm</a>
+                        </div>
+                    </div>
+
+                </div>
+                }
+            </div>
+        </div>        
+    </div>
+</div>

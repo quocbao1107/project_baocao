@@ -1,0 +1,167 @@
+﻿
+@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Shared/_Sanpham.cshtml";
+}
+
+
+<div class="register_account">
+    <div class="wrap">
+        <h4 class="title">Đăng ký tài khoản</h4>
+       @using (Html.BeginForm())
+    {
+       @Html.ValidationSummary(true)
+            <div class="col_1_of_2 span_1_of_2">
+                <div>
+               
+                    @Html.TextBox("HotenKH", "Họ tên Khách hàng", new
+               {
+                   @onblur = "if (this.value == '') {this.value = 'Họ tên Khách hàng';}",
+                   @onfocus = "this.value = ''",
+               })
+                    @ViewData["Loi1"]
+                </div>
+                <div>
+                    @Html.TextBox("TenDN", "Tên đăng nhập", new
+               {
+                   @onblur = "if (this.value == '') {this.value = 'Tên đăng nhập';}",
+                   @onfocus = "this.value = ''",
+               })
+                    @ViewData["Loi2"]
+                </div>
+                <div>
+                    @Html.Password("Matkhau", "Mật khẩu", new
+               {
+                   @onblur = "if (this.value == '') {this.value = 'Mật khẩu';}",
+                   @onfocus = "this.value = ''",
+               })
+                    @ViewData["Loi3"]
+                </div>
+                <div>
+                    @Html.Password("Matkhaunhatrlai", "Nhập lại mật khẩu", new
+               {
+                   @onblur = "if (this.value == '') {this.value = 'Nhập lại mật khẩu';}",
+                   @onfocus = "this.value = ''",
+               })
+                    @ViewData["Loi4"]
+                </div>
+            </div>
+            <div class="col_1_of_2 span_1_of_2">
+                <div>
+                    @Html.TextBox("Email", "Email đăng ký", new
+               {
+                   @onblur = "if (this.value == '') {this.value = 'Email đăng ký';}",
+                   @onfocus = "this.value = ''",
+               })
+                    @ViewData["Loi5"]
+                </div>
+               
+                <div>
+                    @Html.TextBox("Diachi", "Địa chỉ", new
+               {
+                   @onblur = "if (this.value == '') {this.value = 'Địa chỉ';}",
+                   @onfocus = "this.value = ''",
+               })
+                    
+                </div>
+                <div>
+                    @Html.TextBox("Dienthoai", "Số điện thoại", new
+               {
+                   @onblur = "if (this.value == '') {this.value = 'Số điện thoại';}",
+                   @onfocus = "this.value = ''",
+               })
+                    @ViewData["Loi6"]
+                </div>
+                <div>
+                    @Html.TextBox("Ngaysinh", "Ngày Sinh", new
+               {
+                   @onblur = "if (this.value == '') {this.value = 'Ngày sinh';}",
+                   @onfocus = "this.value = ''",
+                   @type="date"
+               })
+                   
+                </div>
+               
+            </div>
+            <button class="grey">Đăng ký</button>
+            
+            <div class="clear"></div>
+    }
+    </div>
+</div>
+
+    
+
+<!--
+<table align="center" >
+    <h4 class="title">ĐĂNG KÝ TÀI KHOẢN</h4>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td> Họ tên khách hàng:</td>
+            <td>
+                @Html.TextBox("HotenKH")
+            @ViewData["Loi1"]
+        </td>
+    </tr>
+        <tr style="height:40px">
+            <td> Tên đăng nhật:</td>
+            <td>
+                @Html.TextBox("TenDN")
+                @ViewData["Loi2"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td>  Mật khẩu:</td>
+            <td>
+                @Html.Password("Matkhau")
+                @ViewData["Loi3"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td>Mật khẩu nhậtr lại: </td>
+            <td>
+                @Html.Password("Matkhaunhatrlai")
+                @ViewData["Loi4"]
+            </td>
+        </tr>
+
+
+        <tr style="height:40px">
+            <td> Email:</td>
+            <td>
+                @Html.TextBox("Email")
+                @ViewData["Loi5"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td> Địa chỉ:</td>
+            <td>
+                @Html.TextBox("Diachi")
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td>Điện thoại:</td>
+            <td>
+                @Html.TextBox("Dienthoai")
+                @ViewData["Loi6"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td> Ngày sinh :</td>
+            <td>
+                <input type="date" name="Ngaysinh" />
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td></td>
+            <td>
+                <input type="Submit" value="Đăng ký" />
+            </td>
+        </tr>
+    }
+</table> 
+
+
+--> 

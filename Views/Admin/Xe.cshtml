@@ -1,0 +1,82 @@
+﻿@using doan.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<doan.Models.XE>
+
+@helper Truncate(string input, int length)
+{
+    if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+
+
+@{
+    ViewBag.Title = "Xe";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>QUẢN LÝ THÔNG TIN XE</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới ", "Themmoixe")
+</p>
+<table class="table">
+    <tr>
+        <th style="width:200px">  Tên xe </th>
+        <th style="width:100px">  Giá bán  </th>
+        <th style="width:300px">  Mô tả    </th>
+        <th style="width:120px">  Ảnh  </th>
+        <th style="width:150px">  Ngày cập nhật </th>
+        <th style="width:120px">  SL.Tồn </th>
+        <th style="width:120px">  Tên loại xe  </th>
+        <th style="width:200px">  </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenxe)
+        </td>
+        <td>
+            @String.Format("{0:0,0}", item.Giaban) VNĐ
+        </td>
+        <td>
+            @Truncate(item.Mota,100)
+        </td>
+        <td>
+            <img style="width:100px;height:auto" src="@Url.Content("~/Hinh/"+ item.Anhbia)" />
+        </td>      
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaycapnhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soluongton)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOAIXE.TenLoaiXe)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Sửa", "Suaxe", new { id=item.Maxe }) |
+            @Html.ActionLink("Chi tiết", "Chitietxe", new { id=item.Maxe }) |
+            @Html.ActionLink("Xóa", "Xoaxe", new { id=item.Maxe })
+        </td>
+    </tr>
+}
+
+</table>
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("Xe", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

@@ -1,0 +1,29 @@
+﻿@using doan.Models;
+@model List<XE>
+
+@foreach (var xe in Model)
+{
+    <div class="col_1_of_3 span_1_of_3">
+        <a href="@Url.Action("Chitiet","oto",new { id = xe.Maxe})">
+            <div class="inner_content clearfix">
+                <div class="product_image">
+                    <img src="~/Hinh/@xe.Anhbia" width="275" height="205" alt="">
+                </div>
+                <div class="sale-box"><span class="on_sale title_shop">New</span></div>
+                <div class="price">
+                    <div class="cart-left">
+                        <p class="title">@xe.Tenxe</p>
+                        <div class="price1">
+                            <span class="actual">@String.Format("{0:0,0}",@xe.Giaban) VNĐ</span>
+                        </div>
+                    </div>
+                    <div class="cart-right"> </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </a>
+    </div>
+}
+
+    
+    

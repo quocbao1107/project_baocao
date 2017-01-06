@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <_PublishTargetUrl>ftp://www.carcenter.somee.com/www.carcenter.somee.com</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Owin.dll">
+      <publishTime>10/05/2016 23:16:53</publishTime>
+    </File>
+    <File Include="bin/PagedList.dll">
+      <publishTime>10/16/2016 22:28:06</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>10/05/2016 23:16:44</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/05/2016 23:16:44</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/16/2016 22:28:09</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/25/2016 02:47:56</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Dangnhap";
+    Layout = "~/Views/Shared/_Sanpham.cshtml";
+}
+
+<div class="register_account">
+    <div class="wrap">
+        <h4 class="title">Đăng nhập tài khoản</h4>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <div class="col_1_of_2 span_1_of_2">
+                <div>
+
+                    @Html.TextBox("TenDN", "Tên đăng nhập", new
+               {
+                   @onblur = "if (this.value == '') {this.value = 'Tên đăng nhập';}",
+                   @onfocus = "this.value = ''",
+               })
+                    @ViewData["Loi1"]
+                </div>
+                <h4 style="color:red; text-align:center"> @ViewBag.Thongbao</h4>
+                <div>
+                    @Html.TextBox("Matkhau", "Nhập mật khẩu", new
+               {
+                   @onblur = "if (this.value == '') {this.value = '*********';}",
+                   @onfocus = "this.value = ''",
+               })
+                    @ViewData["Loi2"]
+                </div>
+                <button class="Submit">Đăng nhập</button>
+                
+            </div>
+            
+            
+
+            <div class="clear"></div>
+        }
+    </div>
+</div>
+}<!--<q=<table align="center">
+    <h4 class="title">ĐĂNG NHẬP TÀI KHOẢN</h4>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td> Tên đăng nhật:</td>
+            <td>
+                @Html.TextBox("TenDN")
+                @ViewData["Loi1"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td align="right">  Mật khẩu:</td>
+            <td>
+                @Html.Password("Matkhau")
+                @ViewData["Loi2"]
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td></td>
+            <td>
+                <input type="Submit" value="Đăng nhập" />
+            </td>
+        </tr>
+    }
+</table>
+    -->
+
+
+
+
